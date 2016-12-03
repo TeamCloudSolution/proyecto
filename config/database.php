@@ -26,8 +26,8 @@ return [
     |
     */
 
-    // 'default' => 'mysql',
-    'default' => 'pgsql',
+    'default' => 'mysql',
+    // 'default' => 'pgsql',
 
     /*
     |--------------------------------------------------------------------------
@@ -62,10 +62,10 @@ return [
           ],
             'driver' => 'mysql',
             // 'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'pedido'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', ''),
+            'port' => '3306',
+            'database' => 'pedido',
+            'username' => 'root',
+            'password' => '',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',

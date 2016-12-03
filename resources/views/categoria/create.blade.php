@@ -13,7 +13,7 @@
     <div class="form-group">
        {!! Form::label('descripcion','Descripcion') !!}
        {!!  Form::text ('descripcion',null,['class' => 'form-control','placeholder' => 'Descripcion de la categoria','
-          required']) !!}
+          required','maxlength=100']) !!}
     </div>
 
     <div class="form-group">
@@ -21,4 +21,5 @@
     </div>
 
     {!! Form::close() !!}
+
 @endsection

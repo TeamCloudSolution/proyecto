@@ -18,7 +18,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categoria = categoria::orderBy('id','ASC')->paginate(5);
+        $categoria = categoria::where('estado', 1)->orderBy('nombre','ASC')->paginate(5);
         return view ('categoria.index')->with ('categoria',$categoria);
     }
 
@@ -41,11 +41,11 @@ class CategoriaController extends Controller
     public function store(Request $request)
     {
         $categoria = new categoria($request ->all());
-        // $categoria->NOMBRE =$request ->nombre;
+        $categoria->estado = 1;
         // $categoria ->DESCRIPCION=$request ->descripcion;
         $categoria -> save();
 
-        Flash::success ("Se ha registrado : ". $categoria-> NOMBRE. " de forma de exitosa");
+        Flash::success ("Se ha registrado : ". $categoria->nombre. " de forma de exitosa");
         return redirect ()->route('categoria.index');
     }
 
@@ -89,7 +89,7 @@ class CategoriaController extends Controller
         $categoria->fill($request->all());
         $categoria->save();
 
-        Flash::warning('La categoria '. $categoria-> NOMBRE. ' ha sido editada exitosamente..');
+        Flash::warning('La categoria '. $categoria->nombre. ' ha sido editada exitosamente..');
         return redirect()->route('categoria.index');
     }
 
@@ -111,9 +111,10 @@ class CategoriaController extends Controller
         // return redirect()->route('categoria.index');
 
          $categoria =categoria::find($id);
-// dd($categoria);
-        $categoria->delete();
-        Flash::error('La categoria '. $categoria-> NOMBRE.' ha sido borrada');
+         $categoria->estado = 0;
+        // $categoria->delete();
+        $categoria->save();
+        Flash::error('La categoria '. $categoria->nombre.' ha sido borrada');
         return redirect()->route('categoria.index');
 
     }
