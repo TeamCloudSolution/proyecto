@@ -13,7 +13,7 @@
 
         <section>
           <div class="container">
-            
+
             @include ('flash::message')
             @yield('contenido')
           </div>
@@ -36,16 +36,17 @@
        <script src="{{ asset ('plugins/bootstrap/js/bootstrap.js') }}"> </script>
        <script>
          $(document).ready(function() {
-               $("#nombre").keyup(function () {
+               $("#NOMBRE").keyup(function () {
                  var str = $(this).val();
                  str = str.replace(/[:;_,.*+?^${}()|\[\]\\\-/<>0123456789]/g, "");
                  $(this).val(str);
                });
-               $("#descripcion").keyup(function () {
+               $("#DESCRIPCION").keyup(function () {
                  var str = $(this).val();
                  str = str.replace(/[:;_,.*+?^${}()|\[\]\\\-/<>0123456789]/g, "");
                  $(this).val(str);
                });
+
          });
        </script>
 

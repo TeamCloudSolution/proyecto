@@ -13,7 +13,7 @@
     <div class="form-group">
        {!! Form::label('DESCRIPCION','Descripcion') !!}
        {!!  Form::text ('DESCRIPCION',$categoria->DESCRIPCION,['class' => 'form-control','placeholder' => 'Descripcion de la categoria','
-          required']) !!}
+          required','maxlength=100']) !!}
     </div>
 
     <div class="form-group">

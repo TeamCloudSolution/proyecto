@@ -7,19 +7,19 @@
 
     <div class="form-group">
         {!! Form::label('CI','Numero') !!}
-        {!!Form::text ('CI',$clientes->CI,['class' => 'form-control','placeholder' =>  'Numero de carnet de identidad','
+        {!!Form::number ('CI',$clientes->CI,['class' => 'form-control','placeholder' =>  'Numero de carnet de identidad','
           required']) !!}
     </div>
 
     <div class="form-group">
         {!! Form::label('NOMBRE','Nombre') !!}
         {!!Form::text ('NOMBRE',$clientes->NOMBRE,['class' => 'form-control','placeholder' => 'Nombre Completo','
-          required']) !!}
+          required','maxlength=100']) !!}
     </div>
 
     <div class="form-group">
        {!! Form::label('TELEFONO','Telefono') !!}
-       {!!  Form::text ('TELEFONO',$clientes->TELEFONO,['class' => 'form-control','placeholder' => 'Numero Telefonico','
+       {!!  Form::number ('TELEFONO',$clientes->TELEFONO,['class' => 'form-control','placeholder' => 'Numero Telefonico','
           required']) !!}
     </div>
 

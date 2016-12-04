@@ -6,14 +6,14 @@
     {!! Form::open(['route' =>'mesas.store','method' => 'POST'])!!}
     <div class="form-group">
         {!! Form::label('NUMERO','Numero') !!}
-        {!!Form::text ('NUMERO',null,['class' => 'form-control','placeholder' => 'Numero de mesa','
+        {!!Form::number ('NUMERO',null,['class' => 'form-control','placeholder' => 'Numero de mesa','
           required']) !!}
     </div>
 
     <div class="form-group">
        {!! Form::label('DESCRIPCION','Descripcion') !!}
        {!!  Form::text ('DESCRIPCION',null,['class' => 'form-control','placeholder' => 'Descripcion','
-          required']) !!}
+          required','maxlength=100']) !!}
     </div>
 
     <div class="form-group">
