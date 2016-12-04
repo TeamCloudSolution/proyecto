@@ -41,6 +41,7 @@
                   <li role="presentation" class="active"><a href="#">Pedido</a></li>
                 </ul>
               </div>
+              
               <div class="col-lg-10 col-sm-10">
                 @include ('flash::message')
                 @yield('contenido')
