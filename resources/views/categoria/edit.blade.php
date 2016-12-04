@@ -5,14 +5,14 @@
 @section ('contenido')
     {!! Form::open(['route' =>['categoria.update',$categoria],'method' => 'PUT'])!!}
     <div class="form-group">
-        {!! Form::label('nombre','Nombre') !!}
-        {!!Form::text ('nombre',$categoria->nombre,['class' => 'form-control','placeholder' => 'Nombre de la categoria','
+        {!! Form::label('NOMBRE','Nombre') !!}
+        {!!Form::text ('NOMBRE',$categoria->NOMBRE,['class' => 'form-control','placeholder' => 'Nombre de la categoria','
           required']) !!}
     </div>
 
     <div class="form-group">
-       {!! Form::label('descripcion','Descripcion') !!}
-       {!!  Form::text ('descripcion',$categoria->descripcion,['class' => 'form-control','placeholder' => 'Descripcion de la categoria','
+       {!! Form::label('DESCRIPCION','Descripcion') !!}
+       {!!  Form::text ('DESCRIPCION',$categoria->DESCRIPCION,['class' => 'form-control','placeholder' => 'Descripcion de la categoria','
           required']) !!}
     </div>
 

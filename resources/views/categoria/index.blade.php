@@ -19,13 +19,13 @@
 
         <tr>
 
-          <td> <a href="{{route('categoria.edit',$categ->id)}}" class="btn btn-warning">
+          <td> <a href="{{route('categoria.edit',$categ->ID)}}" class="btn btn-warning">
             <span class="glyphicon glyphicon-pencil" aria-hidden="true">
              </span>
                </a>
 
 
-               <a href="{{route('categoria.destroy',$categ->id)}}"
+               <a href="{{route('categoria.destroy',$categ->ID)}}"
                  onclick="return confirm('¿Seguro que desea eliminarlo?')" class="btn btn-danger">
                  <span class="glyphicon glyphicon-trash" aria-hidden="true">
                  </span>
@@ -33,8 +33,8 @@
 
              </td>
 
-               <td>{{$categ->nombre}}</td>
-               <td>{{$categ->descripcion}}</td>
+               <td>{{$categ->NOMBRE}}</td>
+               <td>{{$categ->DESCRIPCION}}</td>
               </tr>
         @endforeach
     </tbody>

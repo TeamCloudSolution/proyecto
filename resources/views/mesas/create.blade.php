@@ -5,14 +5,14 @@
 @section ('contenido')
     {!! Form::open(['route' =>'mesas.store','method' => 'POST'])!!}
     <div class="form-group">
-        {!! Form::label('numero','NUMERO') !!}
-        {!!Form::text ('numero',null,['class' => 'form-control','placeholder' => 'Numero de mesa','
+        {!! Form::label('NUMERO','Numero') !!}
+        {!!Form::text ('NUMERO',null,['class' => 'form-control','placeholder' => 'Numero de mesa','
           required']) !!}
     </div>
 
     <div class="form-group">
-       {!! Form::label('descripcion','DESCRIPCION') !!}
-       {!!  Form::text ('descripcion',null,['class' => 'form-control','placeholder' => 'Descripcion','
+       {!! Form::label('DESCRIPCION','Descripcion') !!}
+       {!!  Form::text ('DESCRIPCION',null,['class' => 'form-control','placeholder' => 'Descripcion','
           required']) !!}
     </div>
 

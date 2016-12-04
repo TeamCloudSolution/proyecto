@@ -16,7 +16,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        $cliente = Cliente::where ('estado',1)->orderBy ('nombre','ASC')->paginate(5);
+        $cliente = Cliente::where ('ESTADO',1)->orderBy ('NOMBRE','ASC')->paginate(5);
         return view('clientes.index')->with('clientes',$cliente); //primero la vista y luego la variable
     }
 
@@ -40,14 +40,14 @@ class ClienteController extends Controller
     {
 
         $cliente = new Cliente( $request ->all());
-        $cliente-> estado = 1;
+        $cliente-> ESTADO = 1;
         // $cliente->ci = $request->numero;
         // $cliente->nombre = $request->nombre;
         // $cliente->telefono = $request->telefono;
         // $cliente->correo = $request->email;
         $cliente->save();
        // dd ('Cliente Creado Satisfactoriamente!!');
-        Flash::success("Se ha registrado: " . $cliente->nombre . " de forma Exitosa !");
+        Flash::success("Se ha registrado: " . $cliente-> NOMBRE . " de forma Exitosa !");
         return redirect()->route('clientes.index');
     }
 
@@ -68,10 +68,10 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($ID)
     {
         //
-        $cliente = Cliente::find($id);
+        $cliente = Cliente::find($ID);
         return view ('clientes.edit')-> with ('clientes',$cliente);
     }
 
@@ -82,14 +82,14 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $ID)
     {
         //
         $cliente = new Cliente();
-        $cliente=$cliente->find($id);
+        $cliente=$cliente->find($ID);
         $cliente->fill($request->all());
         $cliente->save();
-        Flash::warning('El cliente '. $cliente->nombre. ' ha sido editado exitosamente..');
+        Flash::warning('El cliente '. $cliente->NOMBRE. ' ha sido editado exitosamente..');
         return redirect()->route('clientes.index');
     }
 
@@ -99,13 +99,13 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($ID)
     {
-        $cliente =Cliente::find($id);
+        $cliente =Cliente::find($ID);
         $cliente->estado = 0;
         //  $cliente->delete();
         $cliente->save();
-        Flash::error('El cliente '. $cliente->nombre.' ha sido borrado');
+        Flash::error('El cliente '. $cliente->NOMBRE.' ha sido borrado');
         return redirect()->route('clientes.index');
     }
 }

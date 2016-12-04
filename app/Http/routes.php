@@ -21,6 +21,8 @@ Route:: resource ('clientes', 'ClienteController');
 
 Route:: resource ('mesas', 'MesaController');
 
+Route:: resource ('test', 'TestController');
+
 // route::get('categoria/{ID}/edit','CategoriaController@edit');
 
 Route:: get ('categoria/{ID}/destroy',[

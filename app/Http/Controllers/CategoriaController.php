@@ -18,7 +18,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categoria = categoria::where('estado', 1)->orderBy('nombre','ASC')->paginate(5);
+        $categoria = categoria::where('ESTADO', 1)->orderBy('NOMBRE','ASC')->paginate(5);
         return view ('categoria.index')->with ('categoria',$categoria);
     }
 
@@ -41,10 +41,10 @@ class CategoriaController extends Controller
     public function store(Request $request)
     {
         $categoria = new categoria($request ->all());
-        $categoria->estado = 1;
+        $categoria->ESTADO = 1;
         // $categoria ->DESCRIPCION=$request ->descripcion;
         $categoria -> save();
-        Flash::success ("Se ha registrado : ". $categoria->nombre. " de forma de exitosa");
+        Flash::success ("Se ha registrado : ". $categoria-> NOMBRE. " de forma de exitosa");
         return redirect ()->route('categoria.index');
     }
 
@@ -65,9 +65,9 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($ID)
     {
-        $categoria = categoria::find($id);
+        $categoria = categoria::find($ID);
         return view ('categoria.edit')-> with ('categoria',$categoria);
     }
 
@@ -78,13 +78,13 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $ID)
     {
         $categoria = new categoria();
-        $categoria=$categoria->find($id);
+        $categoria=$categoria->find($ID);
         $categoria->fill($request->all());
         $categoria->save();
-        Flash::warning('La categoria '. $categoria->nombre. ' ha sido editada exitosamente..');
+        Flash::warning('La categoria '. $categoria-> NOMBRE. ' ha sido editada exitosamente..');
         return redirect()->route('categoria.index');
     }
 
@@ -94,7 +94,7 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($ID)
     {
         // dd($id);
         // $categoria = new categoria();
@@ -105,11 +105,11 @@ class CategoriaController extends Controller
         // Flash::error('La categoria '. $categoria -> NOMBRE. ' ha sido borrada exitosamente...');
         // return redirect()->route('categoria.index');
 
-         $categoria =categoria::find($id);
-         $categoria->estado = 0;
+         $categoria =categoria::find($ID);
+         $categoria->ESTADO = 0;
         // $categoria->delete();
         $categoria->save();
-        Flash::error('La categoria '. $categoria->nombre.' ha sido borrada');
+        Flash::error('La categoria '. $categoria-> NOMBRE.' ha sido borrada');
         return redirect()->route('categoria.index');
 
     }

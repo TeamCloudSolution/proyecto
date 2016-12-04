@@ -5,14 +5,14 @@
 @section ('contenido')
     {!! Form::open(['route' =>'categoria.store','method' => 'POST'])!!}
     <div class="form-group">
-        {!! Form::label('nombre','Nombre') !!}
-        {!!Form::text ('nombre',null,['class' => 'form-control','placeholder' => 'Nombre de la categoria','
+        {!! Form::label('NOMBRE','Nombre') !!}
+        {!!Form::text ('NOMBRE',null,['class' => 'form-control','placeholder' => 'Nombre de la categoria','
           required']) !!}
     </div>
 
     <div class="form-group">
-       {!! Form::label('descripcion','Descripcion') !!}
-       {!!  Form::text ('descripcion',null,['class' => 'form-control','placeholder' => 'Descripcion de la categoria','
+       {!! Form::label('DESCRIPCION','Descripcion') !!}
+       {!!  Form::text ('DESCRIPCION',null,['class' => 'form-control','placeholder' => 'Descripcion de la categoria','
           required','maxlength=100']) !!}
     </div>
 

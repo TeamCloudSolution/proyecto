@@ -18,11 +18,11 @@
 
         @foreach ($clientes as $client)
         <tr>
-          <td> <a href="{{route('clientes.edit',$client->id)}}" class="btn btn-warning">
+          <td> <a href="{{route('clientes.edit',$client->ID)}}" class="btn btn-warning">
             <span class="glyphicon glyphicon-pencil" aria-hidden="true">
             </span>
           </a>
-               <a href="{{route('clientes.destroy',$client->id)}}"
+               <a href="{{route('clientes.destroy',$client->ID)}}"
                  onclick="return confirm('¿Seguro que desea eliminarlo?')" class="btn btn-danger">
                  <span class="glyphicon glyphicon-trash" aria-hidden="true">
                  </span>
@@ -30,10 +30,10 @@
              </td>
 
             <!-- <td>{{$client->id}}</td> -->
-            <td>{{$client->ci}}</td>
-            <td>{{$client->nombre}}</td>
-            <td>{{$client->telefono}}</td>
-            <td>{{$client->correo}}</td>
+            <td>{{$client->CI}}</td>
+            <td>{{$client->NOMBRE}}</td>
+            <td>{{$client->TELEFONO}}</td>
+            <td>{{$client->CORREO}}</td>
             </tr>
         @endforeach
     </tbody>
