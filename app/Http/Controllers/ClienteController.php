@@ -102,7 +102,7 @@ class ClienteController extends Controller
     public function destroy($ID)
     {
         $cliente =Cliente::find($ID);
-        $cliente->estado = 0;
+        $cliente->ESTADO = 0;
         //  $cliente->delete();
         $cliente->save();
         Flash::error('El cliente '. $cliente->NOMBRE.' ha sido borrado');

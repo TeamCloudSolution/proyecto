@@ -21,7 +21,7 @@ Route:: resource ('clientes', 'ClienteController');
 
 Route:: resource ('mesas', 'MesaController');
 
-Route:: resource ('test', 'TestController');
+Route:: resource ('productos', 'ProductoController');
 
 // route::get('categoria/{ID}/edit','CategoriaController@edit');
 
@@ -38,4 +38,9 @@ Route:: get ('clientes/{ID}/destroy',[
 Route:: get ('mesas/{ID}/destroy',[
           'uses'=> 'MesaController@destroy',
           'as'=>'mesas.destroy'
+          ]);
+
+Route:: get ('productos/{ID}/destroy',[
+          'uses'=> 'ProductoController@destroy',
+          'as'=>'productos.destroy'
           ]);
