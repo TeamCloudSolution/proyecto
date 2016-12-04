@@ -44,7 +44,6 @@ class CategoriaController extends Controller
         $categoria->estado = 1;
         // $categoria ->DESCRIPCION=$request ->descripcion;
         $categoria -> save();
-
         Flash::success ("Se ha registrado : ". $categoria->nombre. " de forma de exitosa");
         return redirect ()->route('categoria.index');
     }
@@ -68,11 +67,8 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-
-      $categoria = categoria::find($id);
-
+        $categoria = categoria::find($id);
         return view ('categoria.edit')-> with ('categoria',$categoria);
-
     }
 
     /**
@@ -88,7 +84,6 @@ class CategoriaController extends Controller
         $categoria=$categoria->find($id);
         $categoria->fill($request->all());
         $categoria->save();
-
         Flash::warning('La categoria '. $categoria->nombre. ' ha sido editada exitosamente..');
         return redirect()->route('categoria.index');
     }

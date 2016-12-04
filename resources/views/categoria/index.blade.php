@@ -3,6 +3,7 @@
 @section ('titulo','Lista de Categorias')
 
 @section ('contenido')
+<h1> Categoria </h1>
 <a href="{{ route ('categoria.create')}}" class="btn btn-info"> Registrar Nueva Categoria</a> <hr>
 
 <table class="table table-striped">

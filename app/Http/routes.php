@@ -17,9 +17,23 @@ Route::get('/', function () {
 
 Route:: resource ('categoria','CategoriaController');
 
+Route:: resource ('clientes', 'ClienteController');
+
+Route:: resource ('mesas', 'MesaController');
+
 // route::get('categoria/{ID}/edit','CategoriaController@edit');
 
 Route:: get ('categoria/{ID}/destroy',[
           'uses'=> 'CategoriaController@destroy',
           'as'=>'categoria.destroy'
          ]);
+
+Route:: get ('clientes/{ID}/destroy',[
+          'uses'=> 'ClienteController@destroy',
+          'as'=>'clientes.destroy'
+         ]);
+
+Route:: get ('mesas/{ID}/destroy',[
+          'uses'=> 'MesaController@destroy',
+          'as'=>'mesas.destroy'
+          ]);

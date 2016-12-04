@@ -9,13 +9,11 @@
 
     </head>
 
-
     <body>
 
         <section>
           <div class="container">
-            <h1> Categorias </h1>
-
+            
             @include ('flash::message')
             @yield('contenido')
           </div>
