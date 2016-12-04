@@ -1,7 +1,6 @@
 @extends ('Admin.Template.main')
 
 @section ('titulo', 'Crear Cliente')
-
 @section ('contenido')
     {!! Form::open(['route' =>'clientes.store','method' => 'POST'])!!}
     <div class="form-group">
