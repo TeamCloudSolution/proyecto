@@ -53,7 +53,7 @@
             <footer>
               <div class="container fondoprincipal">
                 <div class="col-lg-4">
-                  <p style="color:white;"> Todos los Derechos Reservados & Copy {{ date('Y')}} </p>
+                  <p style="color:white;"> Todos los Derechos Reservados &copy {{ date('Y')}} </p>
                 </div>
                 <div class="col-lg-4 col-lg-offset-4">
                   <p style="color:white;"> <b>Grupo Cloud Solutions</b></p>
