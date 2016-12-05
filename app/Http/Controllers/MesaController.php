@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Mesa;
 use App\Http\Requests;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\mesarequest;
 
 class MesaController extends Controller
 {
@@ -38,7 +39,7 @@ class MesaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(mesarequest $request)
     {
         //
         $mesa = new Mesa( $request ->all());
@@ -79,7 +80,7 @@ class MesaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $ID)
+    public function update(mesarequest $request, $ID)
     {
         //
         $mesa =Mesa::find($ID);
@@ -101,7 +102,9 @@ class MesaController extends Controller
         $mesa->ESTADO = 0;
       //  $cliente->delete();
         $mesa->save();
-        Flash::error('La mesa '. $mesa->NUMERO.' ha sido borrado');
+        Flash::error('La mesa '. $mesa->NUMERO.' ha sido dado de baja'
+                . ''
+                . '');
         return redirect()->route('mesas.index');
     }
 }

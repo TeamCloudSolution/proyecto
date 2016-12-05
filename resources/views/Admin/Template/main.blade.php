@@ -38,10 +38,10 @@
                   <li role="presentation" class="active"><a href="mesas">Mesas</a></li>
                   <li role="presentation" class="active"><a href="clientes">Clientes</a></li>
                   <li role="presentation" class="active"><a href="#">Validacion</a></li>
-                  <li role="presentation" class="active"><a href="#">Pedido</a></li>
+                  <li role="presentation" class="active"><a href="pedidos">Pedido</a></li>
                 </ul>
               </div>
-              
+
               <div class="col-lg-10 col-sm-10">
                 @include ('flash::message')
                 @yield('contenido')
@@ -53,7 +53,7 @@
             <footer>
               <div class="container fondoprincipal">
                 <div class="col-lg-4">
-                  <p style="color:white;"> Todos los Derechos Reservados & Copy {{ date('Y')}} </p>
+                  <p style="color:white;"> Todos los Derechos Reservados &copy {{ date('Y')}} </p>
                 </div>
                 <div class="col-lg-4 col-lg-offset-4">
                   <p style="color:white;"> <b>Grupo Cloud Solutions</b></p>
