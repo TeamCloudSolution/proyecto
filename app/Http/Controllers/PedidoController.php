@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Cliente;
+use App\DetallePedido;
 use App\Producto;
 use Laracasts\Flash\Flash;
 
@@ -41,16 +42,16 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
+        print_r($request);
 
-        $cliente = new Cliente( $request ->all());
-        $cliente-> ESTADO = 1;
+        $detalle = new DetallePedido( $request ->all());       
         // $cliente->ci = $request->numero;
         // $cliente->nombre = $request->nombre;
         // $cliente->telefono = $request->telefono;
         // $cliente->correo = $request->email;
-        $cliente->save();
+        $detalle->save();
        // dd ('Cliente Creado Satisfactoriamente!!');
-        Flash::success("Se ha registrado: " . $cliente-> NOMBRE . " de forma Exitosa !");
+        Flash::success("Se ha guardado temporalmente el pedido " . $cliente-> NOMBRE . " de forma Exitosa !");
         return redirect()->route('clientes.index');
     }
 
