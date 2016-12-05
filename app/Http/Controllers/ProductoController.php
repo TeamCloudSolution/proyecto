@@ -32,7 +32,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        //porque me sale error
         // $categoria = categoria::where('ESTADO', 1)->orderBy('NOMBRE','ASC')->paginate(5);
         $categoria = categoria::all(['NOMBRE','ID']);
 
