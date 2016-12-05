@@ -2,11 +2,17 @@
 
 @section ('titulo')
   Inicio de mi Pagina
-@endsection 
-
-@section ('contenido')
-    <h1> hola ely ... usando bootstrap</h1>
-    <a href="" class = "btn btn-success"> Pincha el aqui </a>
 @endsection
 
+@section ('contenido')
 
+<div class="img">
+<center>
+  <img src="{{asset('imagenes/welcome.jpg')}}"
+  alt="welcome" class="img-responsive">
+</center>
+</div>
+
+
+
+@endsection

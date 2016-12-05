@@ -7,30 +7,59 @@
 
         <link rel="stylesheet" href="{{asset('plugins/bootstrap/css/bootstrap.css')}}">
 
+        <style type="text/css">
+        .fondoprincipal {
+            min-height: 20px;
+            padding: 19px;
+            margin-bottom: 20px;
+            background-color: #337ab7;
+            border: 1px solid #e3e3e3;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          }
+          </style>
     </head>
 
     <body>
 
-        <section>
           <div class="container">
-
-            @include ('flash::message')
-            @yield('contenido')
+            <div class="row">
+              <div class="col-lg-12 fondoprincipal">
+                 <span style="color:white;"><h1> QUICKORDER</h1></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-2 col-sm-2 col-xs-3">
+                <ul class="nav nav-pills nav-stacked">
+                  <li role="presentation" class="active"><a href="/proyecto/public/">Home</a></li>
+                  <li role="presentation" class="active"><a href="categoria">Categoria</a></li>
+                  <li role="presentation" class="active"><a href="productos">Producto</a></li>
+                  <li role="presentation" class="active"><a href="mesas">Mesas</a></li>
+                  <li role="presentation" class="active"><a href="clientes">Clientes</a></li>
+                  <li role="presentation" class="active"><a href="#">Validacion</a></li>
+                  <li role="presentation" class="active"><a href="#">Pedido</a></li>
+                </ul>
+              </div>
+              
+              <div class="col-lg-10 col-sm-10">
+                @include ('flash::message')
+                @yield('contenido')
+              </div>
+            </div>
           </div>
-        </section>
 
-       <footer class="admin-footer">
-           <nav class="navbar navbar-default">
-               <div class = "container">
-                   <div class="container">
-                       <p class="navbar-text"> Todos los Derechos Reservados & Copy {{ date('Y')}} </p>
-                       <p class="navbar-text navbar-right"> <b>Grupo Cloud Solutions</b></p>
-                   </div>
+
+            <footer>
+              <div class="container fondoprincipal">
+                <div class="col-lg-4">
+                  <p style="color:white;"> Todos los Derechos Reservados & Copy {{ date('Y')}} </p>
                 </div>
-           </nav>
-       </footer>
-
-
+                <div class="col-lg-4 col-lg-offset-4">
+                  <p style="color:white;"> <b>Grupo Cloud Solutions</b></p>
+                </div>
+              </div>
+            </footer>
 
        <script src="{{ asset ('plugins/jquery/js/jquery-3.1.1.js') }}"> </script>
        <script src="{{ asset ('plugins/bootstrap/js/bootstrap.js') }}"> </script>
