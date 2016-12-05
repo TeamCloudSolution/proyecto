@@ -23,6 +23,8 @@ Route:: resource ('mesas', 'MesaController');
 
 Route:: resource ('productos', 'ProductoController');
 
+Route:: resource ('pedidos', 'PedidoController');
+
 // route::get('categoria/{ID}/edit','CategoriaController@edit');
 
 Route:: get ('categoria/{ID}/destroy',[
