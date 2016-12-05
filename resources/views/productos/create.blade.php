@@ -3,6 +3,16 @@
 @section ('titulo', 'Crear Producto')
 
 @section ('contenido')
+
+<div class="alert alert-danger">
+			
+				@foreach ($errors->all() as $error)
+                                   <li>{{$error}}</li>
+				@endforeach
+			
+</div>
+
+
     {!! Form::open(['route' =>'productos.store','method' => 'POST','files'=>true])!!}
     <div class="form-group">
         {!! Form::label('NOMBRE','Nombre') !!}
@@ -24,7 +34,7 @@
 
     <div class="form-group">
        {!! Form::label('STOCK','Stock') !!}
-       {!! Form::number ('STOCK',null,['class' => 'form-control','placeholder' => 'Disponibilidad el producto','
+       {!! Form::text ('STOCK',null,['class' => 'form-control','placeholder' => 'Disponibilidad el producto','
           required']) !!}
     </div>
 

@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Producto;
 use Laracasts\Flash\Flash;
 use App\categoria;
+use App\Http\Requests\ProductoRequest;
+
 
 class ProductoController extends Controller
 {
@@ -43,7 +45,7 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductoRequest $request)
     {
       if ($request->file('imagen')){
                   $file = $request->file('imagen');
@@ -109,7 +111,7 @@ error_log ('n hay imagen');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $ID)
+    public function update(ProductoRequest $request, $ID)
     {
         //
         $producto = new Producto();

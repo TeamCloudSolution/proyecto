@@ -3,6 +3,15 @@
 @section ('titulo', 'Editar Producto'.$productos-> NOMBRE)
 
 @section ('contenido')
+
+  <div class="alert alert-danger">
+			
+				@foreach ($errors->all() as $error)
+                                   <li>{{$error}}</li>
+				@endforeach
+			
+			</div>
+
     {!! Form::open(['route' =>['productos.update',$productos],'method' => 'PUT'])!!}
 
     <div class="form-group">
