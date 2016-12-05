@@ -73,7 +73,6 @@ class ProductoController extends Controller
         return redirect()->route('productos.index');
         }
         else{
-error_log ('n hay imagen');
             return redirect()->route('productos.index');
 
         }
@@ -118,6 +117,11 @@ error_log ('n hay imagen');
         $producto=$producto->find($ID);
         error_log ($producto);
         $producto->fill($request->all());
+        if(Input::hasFile('imagen')){
+        $file = Input::file('imagen');
+        $file->move(public_path().'/imagenes/productos/',$file->getClientOriginalName());
+        $articulo->imagen=$file->getClientOriginalName();
+      }
         $producto->save();
         Flash::warning('El producto '. $producto->NOMBRE. ' ha sido editado exitosamente..');
         return redirect()->route('productos.index');

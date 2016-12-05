@@ -5,11 +5,11 @@
 @section ('contenido')
 
 <div class="alert alert-danger">
-			
+
 				@foreach ($errors->all() as $error)
                                    <li>{{$error}}</li>
 				@endforeach
-			
+
 </div>
 
 
@@ -46,7 +46,7 @@
     @endforeach
   </select>
     </div>
-    
+
     <div class="form-group">
      {!! Form::label('imagen','IMAGEN') !!}
      {!! Form::file ('imagen') !!}

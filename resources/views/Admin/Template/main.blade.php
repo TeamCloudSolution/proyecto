@@ -38,10 +38,10 @@
                   <li role="presentation" class="active"><a href="mesas">Mesas</a></li>
                   <li role="presentation" class="active"><a href="clientes">Clientes</a></li>
                   <li role="presentation" class="active"><a href="#">Validacion</a></li>
-                  <li role="presentation" class="active"><a href="#">Pedido</a></li>
+                  <li role="presentation" class="active"><a href="pedidos">Pedido</a></li>
                 </ul>
               </div>
-              
+
               <div class="col-lg-10 col-sm-10">
                 @include ('flash::message')
                 @yield('contenido')

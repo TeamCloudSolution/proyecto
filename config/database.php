@@ -65,7 +65,7 @@ return [
             'port' => '3306',
             'database' => 'pedido',
             'username' => 'root',
-            'password' => 'root',
+            'password' => '',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
