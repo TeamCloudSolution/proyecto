@@ -45,4 +45,4 @@
 @endsection
 
 
-<!-- {{route('categoria.destroy',$categ->ID)}} -->
+

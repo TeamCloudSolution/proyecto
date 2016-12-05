@@ -22,8 +22,7 @@
 
     <div class="form-group">
        {!! Form::label('DESCRIPCION','Descripcion') !!}
-       {!!  Form::text ('DESCRIPCION',$productos->DESCRIPCION,['class' => 'form-control','placeholder' => 'Descripcion','
-          required','maxlength=100']) !!}
+       {!!  Form::text ('DESCRIPCION',$productos->DESCRIPCION,['class' => 'form-control','placeholder' => 'Descripcion','maxlength=100']) !!}
     </div>
 
     <div class="form-group">
@@ -64,8 +63,8 @@
 
         <div class="form-group">
            {!! Form::label('RUTA_IMAGEN','Imagen') !!}
-           {!! Form::text ('RUTA_IMAGEN',$productos->RUTA_IMAGEN,['class' => 'form-control','placeholder' => 'Imagen','
-              required']) !!}
+              {!! Form::file ('imagen',['class' => 'form-control','placeholder' => 'Precio del producto','
+          required']) !!}
         </div>
 
     <div class="form-group">

@@ -47,17 +47,16 @@ class ProductoController extends Controller
      */
     public function store(ProductoRequest $request)
     {
-      if ($request->file('imagen')){
-                  $file = $request->file('imagen');
+                    if ($request->file('imagen')){
+                            $file = $request->file('imagen');
+                            $name = $file->getClientOriginalName();
 
-                //dd($file);
-                $name = $file->getClientOriginalName();
-                //dd($name);definir la ruta
+                        $path =public_path().'/imagenes/productos/';
+                        $file->move($path, $name);
 
-                $path =public_path().'/imagenes/productos/';
-                $file->move($path, $name);
-
-
+                    }else{
+                        Flash::success("Se ha registrado:  de forma Exitosa !");
+                    }
 
         $producto = new Producto( $request ->all());
         $producto-> ESTADO = 1;
@@ -71,13 +70,13 @@ class ProductoController extends Controller
        // dd ('Cliente Creado Satisfactoriamente!!');
         Flash::success("Se ha registrado: " . $producto-> NOMBRE . " de forma Exitosa !");
         return redirect()->route('productos.index');
-        }
-        else{
-error_log ('n hay imagen');
+       // }
+        //else{
+        //error_log ('n hay imagen');
             return redirect()->route('productos.index');
 
         }
-    }
+    
 
     /**
      * Display the specified resource.

@@ -3,11 +3,21 @@
 @section ('titulo', 'Editar Cliente'.$clientes-> nombre)
 
 @section ('contenido')
+
+
+<div class="alert alert-danger">
+			
+				@foreach ($errors->all() as $error)
+                                   <li>{{$error}}</li>
+				@endforeach
+			
+</div>
+
     {!! Form::open(['route' =>['clientes.update',$clientes],'method' => 'PUT'])!!}
 
     <div class="form-group">
         {!! Form::label('CI','Numero') !!}
-        {!!Form::number ('CI',$clientes->CI,['class' => 'form-control','placeholder' =>  'Numero de carnet de identidad','
+        {!!Form::text ('CI',$clientes->CI,['class' => 'form-control','placeholder' =>  'Numero de carnet de identidad','
           required']) !!}
     </div>
 

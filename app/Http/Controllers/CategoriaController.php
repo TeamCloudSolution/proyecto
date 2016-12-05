@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use App\Http\Requests\CategoriaRequest;
 use App\categoria;
 use Laracasts\Flash\Flash;
 
@@ -38,7 +38,7 @@ class CategoriaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoriaRequest $request)
     {
         $categoria = new categoria($request ->all());
         $categoria->ESTADO = 1;
@@ -78,7 +78,7 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $ID)
+    public function update(CategoriaRequest $request, $ID)
     {
         $categoria = new categoria();
         $categoria=$categoria->find($ID);
