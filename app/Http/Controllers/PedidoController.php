@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Cliente;
+use App\Producto;
 use Laracasts\Flash\Flash;
 
 class PedidoController extends Controller
@@ -17,7 +18,9 @@ class PedidoController extends Controller
     public function index()
     {
 //        $cliente = Cliente::where ('ESTADO',1)->orderBy ('NOMBRE','ASC')->paginate(5);
-        return view('pedidos.index'); //primero la vista y luego la variable
+        $products = Producto::where('ESTADO',1)->orderBy ('ID','ASC')->paginate(5);
+      //  print_r($products);
+        return view('pedidos.index')->with('productos',$products);  //primero la vista y luego la variable
     }
 
     /**

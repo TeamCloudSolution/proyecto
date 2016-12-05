@@ -7,7 +7,7 @@
       @foreach ($productos as $producto)
         <li class="row items-platos">
             <div class="col-xs-3">
-                <img src="img/platocomidauno.jpg" class="image-item">   
+                <img src="{{asset('imagenes/productos/'.$producto->RUTA_IMAGEN)}}" class="image-item">   
             </div>
             <div class="col-xs-7">
                 <div class="row">
@@ -68,7 +68,7 @@
 </div>
 
 <div id="btn-pedido" class="col-xs-12 text-center">
-    <h3>Realiar Pedido</h3>
+    <h3>Realizar Pedido</h3>
 </div>
 
-@stop
+@endsection
