@@ -15,7 +15,9 @@
 
     <div class="form-group">
           {!! Form::label('NUMERO','Numero') !!}
+
         {!!Form::number ('NUMERO',$mesas->NUMERO,['class' => 'form-control','placeholder' => 'Numero de mesa','
+
           required']) !!}
     </div>
 
