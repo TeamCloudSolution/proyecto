@@ -7,7 +7,7 @@
 
     <div class="form-group">
           {!! Form::label('NUMERO','Numero') !!}
-        {!!Form::numero ('NUMERO',$mesas->NUMERO,['class' => 'form-control','placeholder' => 'Numero de mesa','
+        {!!Form::text ('NUMERO',$mesas->NUMERO,['class' => 'form-control','placeholder' => 'Numero de mesa','
           required']) !!}
     </div>
 
