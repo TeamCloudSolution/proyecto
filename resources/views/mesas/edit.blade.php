@@ -3,11 +3,19 @@
 @section ('titulo', 'Editar Mesa'.$mesas-> NUMERO)
 
 @section ('contenido')
+<div class="alert alert-danger">
+
+				@foreach ($errors->all() as $error)
+                                   <li>{{$error}}</li>
+				@endforeach
+
+</div>
+
     {!! Form::open(['route' =>['mesas.update',$mesas],'method' => 'PUT'])!!}
 
     <div class="form-group">
           {!! Form::label('NUMERO','Numero') !!}
-        {!!Form::numero ('NUMERO',$mesas->NUMERO,['class' => 'form-control','placeholder' => 'Numero de mesa','
+        {!!Form::number ('NUMERO',$mesas->NUMERO,['class' => 'form-control','placeholder' => 'Numero de mesa','
           required']) !!}
     </div>
 

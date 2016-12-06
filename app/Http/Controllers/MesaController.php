@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mesa;
 use App\Http\Requests;
-use Laracasts\Flash\Flash;
 use App\Http\Requests\mesarequest;
+use Laracasts\Flash\Flash;
+
 
 class MesaController extends Controller
 {

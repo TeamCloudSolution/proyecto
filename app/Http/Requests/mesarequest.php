@@ -31,19 +31,19 @@ class mesarequest extends Request
             }
             case 'POST':
             {
-                return ['NUMERO'=>'required|numeric:mesa',
+                return ['NUMERO'=>'required|unique:mesa',
                        'DESCRIPCION'=>'min:5|max:500'
                         ];
-                
+
             }
             case 'PUT':
             case 'PATCH':
             {
-               return ['NUMERO'=>'required|numeric:mesa',
+               return [
                       'DESCRIPCION'=>'min:5|max:500'
                       ];
             }
         }
     }
-    
+
 }
