@@ -1,0 +1,54 @@
+ID
+NOMBRE
+DESCRIPCION
+PRECIO
+STOCK
+ID_CATEGORIA
+ESTADO
+RUTA_IMAGEN
+
+
+id
+nombre
+descripcion
+precio
+stock
+id_categoria
+estado
+ruta_imagen
+  public function categoria(){
+    return $this->belongsTo('App\Categoria');  }
+
+
+
+
+        {!! Form::select ('id_categoria',$categoria, )
+
+
+{!! Form::select ('id_categoria',$categoria,$producto->categoria->ID,)
+
+
+C:\xampp\htdocs\webPedido
+
+
+ {!!Form:: file ('imagen')!!}
+
+ {!! Form::textarea(file('imagen')) !!}
+
+
+<input type="file" name="imagen" class="form-control">
+
+
+
+
+
+
+
+
+<div class="alert alert-danger">
+			
+				@foreach ($errors->all() as $error)
+                                   <li>{{$error}}</li>
+				@endforeach
+			
+			</div>

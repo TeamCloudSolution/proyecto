@@ -5,11 +5,11 @@
 @section ('contenido')
 
 <div class="alert alert-danger">
-			
+
 				@foreach ($errors->all() as $error)
                                    <li>{{$error}}</li>
 				@endforeach
-			
+
 </div>
 
 
@@ -22,8 +22,7 @@
 
     <div class="form-group">
        {!! Form::label('DESCRIPCION','Descripcion') !!}
-       {!!  Form::text ('DESCRIPCION',null,['class' => 'form-control','placeholder' => 'Descripcion','
-          required','maxlength=100']) !!}
+       {!!  Form::text ('DESCRIPCION',null,['class' => 'form-control','placeholder' => 'Descripcion','maxlength=100']) !!}
     </div>
 
     <div class="form-group">
@@ -46,10 +45,11 @@
     @endforeach
   </select>
     </div>
-    
+
     <div class="form-group">
      {!! Form::label('imagen','IMAGEN') !!}
-     {!! Form::file ('imagen') !!}
+     {!! Form::file ('imagen',['class' => 'form-control','placeholder' => 'Precio del producto','
+          required']) !!}
   </div>
 
     <div class="form-group">

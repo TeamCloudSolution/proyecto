@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use App\image;
 
 class ProductoRequest extends Request
 {
@@ -33,11 +34,11 @@ class ProductoRequest extends Request
             {
                 return [
                     'NOMBRE'=>'min:3|max:50|required|unique:producto',
-                    'DESCRIPCION'=>'min:5|max:200',
+                    'DESCRIPCION'=>'min:10|max:200',
                     'PRECIO'=>'numeric|min:1|required',
                     'STOCK'=>'numeric|min:1|required',
                     'ID_CATEGORIA'=>'required',
-                    'RUTA_IMAGEN'=>'image|required'
+                    'RUTA_IMAGEN' =>'mimes:jpeg,jpg,png'
                 ];
             }
             case 'PUT':
@@ -49,7 +50,7 @@ class ProductoRequest extends Request
                     'PRECIO'=>'required|numeric|min:1',
                     'STOCK'=>'required|numeric|min:1',
                     'ID_CATEGORIA'=>'required',
-                    'RUTA_IMAGEN'=>'image|required'
+                    'RUTA_IMAGEN' =>'mimes:jpeg,jpg,png'
                 ];
             }
         }

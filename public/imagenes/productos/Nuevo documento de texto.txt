@@ -1,0 +1,44 @@
+@extends ('Admin.Template.main')
+
+@section ('titulo','Lista de PRODUCTOS')
+
+@section ('contenido')
+<a href="{{ route ('productos.create')}}" class="btn btn-info"> Registrar Nuevo Producto</a> <hr>
+<table class="table table-striped">
+    <thead>
+         
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>DESCRIPCION</th>
+        <th>PRECIO</th>
+        <th>STOCK</th>
+        <th>ID_CATEGORIA</th>
+        <th>RUTA_IMAGEN</th>
+       <th>ACCION</th>
+    </thead>
+    <tbody>
+        @foreach ($producto as $product)
+        <tr>
+            
+            
+            <td>{{$product->ID}}</td>
+            <td>{{$product->NOMBRE}}</td>
+            <td>{{$product->DESCRIPCION}}</td>
+            <td>{{$product->PRECIO}}</td>
+            <td>{{$product->STOCK}}</td>
+            <td>{{$product->ID_CATEGORIA}}</td>
+            <td>
+                <img src="{{asset('imagenes/productos/'.$product->RUTA_IMAGEN)}}" alt="{{$product->nombre}}" height="100px" width="100px" class="img-responsive">
+            </td>
+            <td> <a href="{{route('productos.edit',$product->ID)}}" class="btn btn-warning"> <span class="glyphicon glyphicon-wrench" aria-hidden="true"> </span></a> 
+                 <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>
+        </tr>
+        @endforeach
+    </tbody> 
+</table>
+<div class="text-center">
+        {!! $producto->render() !!}
+</div>     
+
+@endsection 
+

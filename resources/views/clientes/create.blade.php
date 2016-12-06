@@ -2,10 +2,17 @@
 
 @section ('titulo', 'Crear Cliente')
 @section ('contenido')
+<div class="alert alert-danger">
+			
+				@foreach ($errors->all() as $error)
+                                   <li>{{$error}}</li>
+				@endforeach
+			
+</div>
     {!! Form::open(['route' =>'clientes.store','method' => 'POST'])!!}
     <div class="form-group">
         {!! Form::label('CI','Numero') !!}
-        {!!Form::number ('CI',null,['class' => 'form-control','placeholder' => 'Numero de carnet de identidad','
+        {!!Form::text ('CI',null,['class' => 'form-control','placeholder' => 'Numero de carnet de identidad','
           required']) !!}
     </div>
 

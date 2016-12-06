@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Cliente;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\ClienteRequest;
 
 class ClienteController extends Controller
 {
@@ -36,7 +37,7 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClienteRequest $request)
     {
 
         $cliente = new Cliente( $request ->all());
@@ -82,7 +83,7 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $ID)
+    public function update(ClienteRequest $request, $ID)
     {
         //
         $cliente = new Cliente();
